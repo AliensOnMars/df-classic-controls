@@ -1,0 +1,4 @@
+# local tool settings and build output
+.claude/
+dist/
+*.log
