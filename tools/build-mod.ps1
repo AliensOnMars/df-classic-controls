@@ -51,6 +51,13 @@ Copy-Item (Join-Path $root 'LICENSE') (Join-Path $out 'LICENSE.txt')
 New-Item -ItemType Directory -Force -Path (Join-Path $out 'docs') | Out-Null
 Copy-Item (Join-Path $root 'docs\keys.md') (Join-Path $out 'docs')
 Copy-Item (Join-Path $root 'docs\labors-and-therapist.md') (Join-Path $out 'docs')
+# Dwarf Therapist memory layouts for the game builds they were made for
+$layouts = Join-Path $root 'therapist'
+if (Test-Path $layouts) {
+    $t = Join-Path $out 'therapist'
+    New-Item -ItemType Directory -Force -Path $t | Out-Null
+    Copy-Item (Join-Path $layouts '*') $t
+}
 
 $zip = Join-Path $dist "$id-$version.zip"
 if (Test-Path $zip) { Remove-Item $zip }

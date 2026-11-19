@@ -106,6 +106,16 @@ A new fort, first steps:
 Everything those steps open shows its own key list. The full reference is in
 [docs/keys.md](docs/keys.md).
 
+## Dwarf Therapist
+
+Dwarf Therapist v42.1.21, the latest release, cannot read 53.17 out of the
+box ("Unidentified Game Version"). This project ships the missing memory
+layout: in the [therapist](therapist) folder (also inside the installed mod),
+and as a ready-to-run copy of Therapist with it in place,
+`DwarfTherapist-v42.1.21-win64-df53.17.zip`, on the GitHub release. Details,
+and how to make a layout for a newer game build, are in
+[docs/labors-and-therapist.md](docs/labors-and-therapist.md).
+
 ## Turning it off
 
 In the DFHack console:

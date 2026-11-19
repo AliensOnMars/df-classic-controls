@@ -10,11 +10,17 @@
 #
 #   .\update-therapist.ps1 -TherapistDir "D:\Tools\DwarfTherapist"
 #
-# or set DWARF_THERAPIST_DIR once and leave the argument off. The game's
-# folder and DFHack are found from the running game; -GameDir and -DfhackRun
+# or, for a game build this repository already has a layout for (the
+# therapist folder), without the game running:
+#
+#   .\update-therapist.ps1 -TherapistDir "D:\Tools\DwarfTherapist" -Bundled
+#
+# Set DWARF_THERAPIST_DIR once to leave -TherapistDir off. The game's folder
+# and DFHack are found from the running game; -GameDir and -DfhackRun
 # override them. Then start (or restart) Dwarf Therapist.
 param(
     [string]$TherapistDir = $env:DWARF_THERAPIST_DIR,
+    [switch]$Bundled,
     [string]$GameDir = "",
     [string]$DfhackRun = ""
 )
@@ -36,13 +42,24 @@ function Find-DfhackRun([string]$gameDir) {
 }
 
 if (-not $TherapistDir) { throw "Say where Dwarf Therapist is: -TherapistDir <folder>, or set DWARF_THERAPIST_DIR" }
-if (-not $GameDir) { $GameDir = Find-GameDir }
-if (-not $DfhackRun) { $DfhackRun = Find-DfhackRun $GameDir }
-
 $layouts = Join-Path $TherapistDir "data\memory_layouts\windows"
 if (-not (Test-Path $layouts)) { throw "No memory_layouts\windows folder under $TherapistDir" }
+
+if ($Bundled) {
+    $own = Join-Path (Split-Path $PSScriptRoot) 'therapist'
+    $files = Get-ChildItem $own -Filter '*.ini' -ErrorAction SilentlyContinue
+    if (-not $files) { throw "No layouts in $own" }
+    foreach ($f in $files) {
+        Copy-Item $f.FullName $layouts -Force
+        "Copied $($f.Name) to $layouts"
+    }
+    return
+}
+
+if (-not $GameDir) { $GameDir = Find-GameDir }
+if (-not $DfhackRun) { $DfhackRun = Find-DfhackRun $GameDir }
 if (-not (Get-Process "Dwarf Fortress" -ErrorAction SilentlyContinue)) {
-    throw "Dwarf Fortress is not running. Start it through DFHack and load a fort first."
+    throw "Dwarf Fortress is not running. Start it through DFHack and load a fort first (or use -Bundled)."
 }
 if (-not $DfhackRun -or -not (Test-Path $DfhackRun)) { throw "Could not find dfhack-run.exe: pass -DfhackRun <path>" }
 

@@ -75,16 +75,29 @@ stops with "Unidentified Game Version". DFHack can write the missing file for
 whatever version is running, and with it Therapist connects and reads the
 fort (names, squads, labors, skills checked against the test fort).
 
-After each game update, with the game running through DFHack and a fort
-loaded (from a copy of this repository):
+This project ships that file for 53.17, three ways:
 
-    tools\update-therapist.ps1 -TherapistDir "<your Dwarf Therapist folder>"
+- **A ready-to-run Therapist**: `DwarfTherapist-v42.1.21-win64-df53.17.zip`
+  on the GitHub release is the official v42.1.21 with the layout already in
+  place. Unpack it anywhere and run `DwarfTherapist.exe`.
+- **The layout alone**, for a Therapist you already have: the `therapist`
+  folder (in the repository, and in the installed mod's folder) holds
+  `v0.53.17-steam_win64.ini`. Copy it into Therapist's
+  `data\memory_layouts\windows` folder, or from a copy of the repository run
+  `tools\update-therapist.ps1 -TherapistDir "<your Dwarf Therapist folder>" -Bundled`.
+  The `therapist\README.md` there lists which game build each file is for.
+- **A fresh one** for a game build not covered yet: after each game update,
+  with the game running through DFHack and a fort loaded, run (from a copy of
+  this repository)
 
-It runs DFHack's `devel/export-dt-ini` and moves the result into Therapist's
-`data\memory_layouts\windows` folder under the name Therapist expects
-(`v0.53.17-steam_win64.ini`). Then start Therapist. `-GameDir` and
-`-DfhackRun` point it at a game installed somewhere other than Steam's
-default library.
+      tools\update-therapist.ps1 -TherapistDir "<your Dwarf Therapist folder>"
+
+  It runs DFHack's `devel/export-dt-ini` and moves the result into
+  Therapist's `data\memory_layouts\windows` folder under the name Therapist
+  expects (`v0.53.17-steam_win64.ini`). Then start Therapist. `-GameDir` and
+  `-DfhackRun` point it at a game installed somewhere other than Steam's
+  default library. To ship it, add the file to `therapist\` and rebuild the
+  bundle with `tools\build-therapist-bundle.ps1`.
 
 - The layout only says where things are. If a game update changes what a
   structure means, Therapist itself needs a new release; a column that looks

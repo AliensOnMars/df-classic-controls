@@ -30,3 +30,6 @@ First release, for Dwarf Fortress 53.17 with DFHack 53.17-r1.
   (`classic-labors` command, or `c` on the work details page).
 - `k` names the material of the tile under the cursor; anything other than
   the bare map pauses the game.
+- Dwarf Therapist: a memory layout for 53.17 (the latest Therapist release
+  stops at 53.02), shipped in the mod's `therapist` folder, and a
+  ready-to-run Therapist v42.1.21 with it in place on the GitHub release.

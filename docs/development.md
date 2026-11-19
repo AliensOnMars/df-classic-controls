@@ -13,7 +13,9 @@ some notes are dated.
 - `tools/build-mod.ps1` - assembles the mod folder and zip in `dist/`, and stages it for upload
 - `tools/capture.ps1` - screenshot the game window without focusing it
 - `tools/sendkeys.ps1` - send real key presses to the game window
-- `tools/update-therapist.ps1` - give Dwarf Therapist a memory layout for the running game
+- `therapist/` - Dwarf Therapist memory layouts for the game builds Therapist has none for (shipped in the mod too)
+- `tools/update-therapist.ps1` - give Dwarf Therapist a memory layout for the running game (`-Bundled`: the ones in `therapist/`)
+- `tools/build-therapist-bundle.ps1` - a ready-to-run Therapist for the release: an official release plus the layouts in `therapist/`
 - `tools/sendmouse.ps1` - post a left-button drag between two map tiles (the game mostly ignores it)
 - `tools/gridtest.sh` - smoke test of the position-dependent screens (needs a prepared test save)
 
