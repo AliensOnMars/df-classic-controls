@@ -46,7 +46,7 @@ can be switched off (below) until a new version is out.
 
 ### From the Steam Workshop
 
-1. Subscribe to DFHack and to Classic Controls.
+1. Install DFHack (free on the Steam store) and subscribe to Classic Controls.
 2. Start the game with DFHack running (on Steam, launch DFHack). If pressing
    `d` in a fort shows no key list at the top left, DFHack is not running.
 3. That's all: the mod does not need adding to a world. DFHack loads it in
