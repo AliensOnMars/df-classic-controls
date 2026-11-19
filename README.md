@@ -54,8 +54,8 @@ can be switched off (below) until a new version is out.
 
 ### By hand
 
-Download `classic_controls-<version>.zip` from the releases and unpack it into
-the game's `mods` folder, so that you have `mods\classic_controls\info.txt`.
+Download `spriksprak_classic_controls-<version>.zip` from the releases and unpack it into
+the game's `mods` folder, so that you have `mods\spriksprak_classic_controls\info.txt`.
 The Steam version keeps that folder in
 `%APPDATA%\Bay 12 Games\Dwarf Fortress\mods` (in the game's own folder only
 in portable mode). Then start the game with DFHack as above.
@@ -144,6 +144,8 @@ In the DFHack console:
   Dwarf Therapist to read the current game
 - [docs/development.md](docs/development.md): how it works, working on it
   against a running game, test notes
+- [docs/publishing.md](docs/publishing.md): publishing to the Steam Workshop,
+  testing the Workshop copy, and releasing updates
 - [CHANGELOG.md](CHANGELOG.md)
 
 ## Licence

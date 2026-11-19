@@ -11,6 +11,7 @@ some notes are dated.
 - `scripts/cc-dev/` - helpers for poking at the running game (below); not part of the mod
 - `mod/` - the mod's `info.txt` and Workshop preview image
 - `tools/build-mod.ps1` - assembles the mod folder and zip in `dist/`, and stages it for upload
+- `tools/dev-scripts.ps1` - switches the game between this working copy and an installed (Workshop) copy; see `docs/publishing.md`
 - `tools/capture.ps1` - screenshot the game window without focusing it
 - `tools/sendkeys.ps1` - send real key presses to the game window
 - `therapist/` - Dwarf Therapist memory layouts for the game builds Therapist has none for (shipped in the mod too)
