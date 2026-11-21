@@ -62,7 +62,7 @@ the MIT licence (LICENSE.txt). The Qt libraries are as shipped in the
 official release. Official releases and source:
 https://github.com/Dwarf-Therapist/Dwarf-Therapist
 
-Repackaged by Classic Controls (https://github.com/Spriksprak/df-classic-controls).
+Repackaged by Classic Controls (https://github.com/AliensOnMars/df-classic-controls).
 Labors set in Therapist only stick while its "Allow labor changes" option is
 ticked; see docs/labors-and-therapist.md there.
 "@
