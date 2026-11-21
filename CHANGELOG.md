@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1 (2026-11-21)
+
+- The mod's author is shown as AliensOnMars, the Steam name, in the game's
+  mod list. Nothing else changes.
+
 ## 1.0.0 (2026-11-19)
 
 First release, for Dwarf Fortress 53.17 with DFHack 53.17-r1.
